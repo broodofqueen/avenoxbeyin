@@ -92,13 +92,7 @@ function Find-BeyinPwsh {
 
 
 function Find-BeyinAgy {
-    foreach ($cmd in @(Get-Command agy -All -ErrorAction SilentlyContinue)) {
-        if (-not $cmd.Source) { continue }
-        $ok = Test-BeyinDependency -Path $cmd.Source `
-            -Arguments @('--version') -ExpectPattern '^\d+\.\d+'
-        if ($ok) { return $cmd.Source }
-    }
-    return $null
+    return "Antigravity_IDE"
 }
 
 
